@@ -52,7 +52,7 @@ onMounted(async () => {
         </p>
         <button
           type="button"
-          class="border py-2 px-4 cormorant-garamond-bold text-xl outline-none border-none bg-rose-400 hover:bg-rose-200 rounded-md"
+          class="border py-2 px-4 cormorant-garamond-bold text-xl outline-none border-none bg-rose-400 hover:bg-rose-200 rounded-md shadow-md transition duration-300 ease-in-out"
           @click="envelopeStore.openEnvelope"
           v-if="guestStore.isGuestRegistered"
         >

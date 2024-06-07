@@ -22,7 +22,7 @@ const saveEventToCalendar = () => {
         <p class="cormorant-garamond-bold text-2xl">Sabtu, 29 Juni 2024</p>
         <button
           type="button"
-          class="border py-2 px-4 cormorant-garamond-bold text-xl outline-none border-none bg-rose-400 hover:bg-rose-200 rounded-md"
+          class="border py-2 px-4 cormorant-garamond-bold text-xl outline-none border-none bg-rose-400 hover:bg-rose-200 rounded-md shadow-md transition duration-300 ease-in-out"
           @click="saveEventToCalendar"
         >
           Save to Google Calendar
