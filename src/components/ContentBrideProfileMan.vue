@@ -11,7 +11,7 @@ import SectionContentWrapper from './partials/SectionContentWrapper.vue'
       <BrideImage :src="ManBrideImage" />
       <p class="cormorant-garamond-bold text-2xl md:text-3xl">Abdul Hakim Ghaniy, S.Kom</p>
       <p class="">Anak Pertama dari</p>
-      <p class="cormorant-garamond-bold text-xl">Bapak Nurwahyudin & Ibu Rumiasih</p>
+      <p class="cormorant-garamond-bold text-xl">Bapak Nur Wahyudin & Ibu Rumiasih</p>
     </SectionContentWrapper>
   </SectionContent>
 </template>
