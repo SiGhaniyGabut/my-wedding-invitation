@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
+    "v-viewer": "^3.0.13",
+    "viewerjs": "^1.11.6",
     "vue": "^3.4.21",
     "vue3-lottie": "^3.3.0"
   },
