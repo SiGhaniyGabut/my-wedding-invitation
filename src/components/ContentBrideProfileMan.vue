@@ -1,6 +1,6 @@
 <script setup>
 import BrideImage from './partials/BrideImage.vue'
-import ManBrideImage from '../assets/images/PROFILE_GHANIY.jpg'
+import ManBrideImage from '../assets/images/PROFILE_GHANIY.webp'
 import SectionContent from './partials/SectionContent.vue'
 import SectionContentWrapper from './partials/SectionContentWrapper.vue'
 </script>
