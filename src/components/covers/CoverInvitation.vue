@@ -1,4 +1,5 @@
 <script setup>
+import ButtonAction from '../partials/ButtonAction.vue';
 import SectionContent from '../partials/SectionContent.vue'
 import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
 
@@ -20,13 +21,11 @@ const saveEventToCalendar = () => {
       </p>
       <div class="additional-info flex flex-col gap-2">
         <p class="cormorant-garamond-bold text-2xl">Sabtu, 29 Juni 2024</p>
-        <button
+        <ButtonAction
+          text="Save to Google Calendar"
           type="button"
-          class="border py-2 px-4 cormorant-garamond-bold text-xl outline-none border-none bg-rose-400 hover:bg-rose-200 rounded-md shadow-md transition duration-300 ease-in-out"
           @click="saveEventToCalendar"
-        >
-          Save to Google Calendar
-        </button>
+        />
       </div>
     </SectionContentWrapper>
   </SectionContent>

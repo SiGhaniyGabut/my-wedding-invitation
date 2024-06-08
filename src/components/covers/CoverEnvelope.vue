@@ -3,6 +3,7 @@ import { onMounted, watch } from 'vue'
 import { useEnvelopeStore } from '../../stores/envelope'
 import { useGuestStore } from '../../stores/guest'
 
+import ButtonAction from '../partials/ButtonAction.vue'
 import SectionContent from '../partials/SectionContent.vue'
 import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
 import Music from '../../assets/music/RAPSODI-JKT48_SAXOPHONE-COVER.mp3'
@@ -50,14 +51,12 @@ onMounted(async () => {
             guestStore.name.toUpperCase()
           }}</span>
         </p>
-        <button
+        <ButtonAction
+          text="Open Invitation"
           type="button"
-          class="border py-2 px-4 cormorant-garamond-bold text-xl outline-none border-none bg-rose-400 hover:bg-rose-200 rounded-md shadow-md transition duration-300 ease-in-out"
           @click="envelopeStore.openEnvelope"
           v-if="guestStore.isGuestRegistered"
-        >
-          Open Invitation
-        </button>
+        />
       </div>
     </SectionContentWrapper>
   </SectionContent>
