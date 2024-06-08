@@ -9,6 +9,7 @@ import CoverInvitation from './covers/CoverInvitation.vue'
 import CoverBrideProfile from './covers/CoverBrideProfile.vue'
 import CoverDateAndVenue from './covers/CoverDateAndVenue.vue'
 import CoverMomentsAndGallery from './covers/CoverMomentsAndGallery.vue'
+import CoverWeddingGift from './covers/CoverWeddingGift.vue'
 
 // Content Components
 import ContentHadit from './contents/ContentHadit.vue'
@@ -18,6 +19,9 @@ import ContentBrideProfileWoman from './contents/ContentBrideProfileWoman.vue'
 import ContentDate from './contents/ContentDate.vue'
 import ContentMoments from './contents/ContentMoments.vue'
 import ContentGallery from './contents/ContentGallery.vue'
+import ContentWeddingGift from './contents/ContentWeddingGift.vue'
+import ContentThanks from './contents/ContentThanks.vue'
+import ContentAuthorshipAndLicense from './contents/ContentAuthorshipAndLicense.vue'
 
 const envelopeStore = useEnvelopeStore()
 const verticalFlowerOpacity = ref(0)
@@ -106,5 +110,15 @@ onMounted(() => {
     <CoverMomentsAndGallery />
     <ContentMoments />
     <ContentGallery />
+
+    <!-- Wedding Gift -->
+    <CoverWeddingGift />
+    <ContentWeddingGift />
+
+    <!-- Thanks -->
+    <ContentThanks />
+
+    <!-- Authorship and License -->
+    <ContentAuthorshipAndLicense />
   </div>
 </template>
