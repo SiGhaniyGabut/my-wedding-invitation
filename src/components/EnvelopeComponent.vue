@@ -17,10 +17,7 @@ const envelopeStore = useEnvelopeStore()
 </template>
 
 <style scoped>
-.envelope-enter-active {
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+.envelope-enter-active,
 .envelope-leave-active {
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
