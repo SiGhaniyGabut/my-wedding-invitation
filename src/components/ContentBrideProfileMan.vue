@@ -6,7 +6,7 @@ import SectionContentWrapper from './partials/SectionContentWrapper.vue'
 </script>
 
 <template>
-  <SectionContent :isCover="false" :overflowAuto="false" :sectionSplitter="true">
+  <SectionContent :isCover="false" :overflowAuto="false" :sectionSplitter="true" :showSplitterOnMediumScreen="true">
     <SectionContentWrapper>
       <BrideImage :src="ManBrideImage" />
       <p class="cormorant-garamond-bold text-2xl md:text-3xl">Abdul Hakim Ghaniy, S.Kom</p>

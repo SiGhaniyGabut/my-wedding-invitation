@@ -4,7 +4,7 @@ import SectionContentWrapper from './partials/SectionContentWrapper.vue'
 </script>
 
 <template>
-  <SectionContent :isCover="false" :overflowAuto="false" :sectionSplitter="true">
+  <SectionContent :isCover="false" :overflowAuto="false" :sectionSplitter="true" :showSplitterOnMediumScreen="true">
     <SectionContentWrapper>
       <p class="gulzar-regular leading-10 text-md">
         وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا
