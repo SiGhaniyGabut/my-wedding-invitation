@@ -1,6 +1,6 @@
 <script setup>
-import SectionContent from './partials/SectionContent.vue'
-import SectionContentWrapper from './partials/SectionContentWrapper.vue'
+import SectionContent from '../partials/SectionContent.vue'
+import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
 </script>
 
 <template>
@@ -9,9 +9,9 @@ import SectionContentWrapper from './partials/SectionContentWrapper.vue'
       <p
         class="cormorant-garamond-bold text-4xl flex flex-col gap-2 justify-center md:flex-row md:text-5xl"
       >
-        WAKTU DAN TEMPAT PELAKSANAAN
+        MOMENT DAN GALERI
       </p>
-      <p class="text-sm italic">Date and Venue</p>
+      <p class="text-sm italic">Moments and Gallery</p>
     </SectionContentWrapper>
   </SectionContent>
 </template>

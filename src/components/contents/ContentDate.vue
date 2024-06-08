@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-import CountDownTime from './partials/CountDownTime.vue'
-import SectionContent from './partials/SectionContent.vue'
-import SectionContentWrapper from './partials/SectionContentWrapper.vue'
+import CountDownTime from '../partials/CountDownTime.vue'
+import SectionContent from '../partials/SectionContent.vue'
+import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
 
 // Create countdown
 const countdown = ref({
