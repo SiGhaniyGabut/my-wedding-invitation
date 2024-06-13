@@ -28,3 +28,11 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Online Invitation Dataset
+GUESTS.xlsx
+GUESTS_PREDEFINED.json
+guest-broadcast-template.mustache
+
+# Extracted xlsx files
+GUESTS_BROADCAST.xlsx
