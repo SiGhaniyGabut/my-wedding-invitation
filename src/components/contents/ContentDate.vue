@@ -14,7 +14,7 @@ const countdown = ref({
 })
 
 onMounted(() => {
-  const weddingDate = new Date('2024-06-29T02:00:00Z').getTime()
+  const weddingDate = new Date('2024-06-29T04:00:00Z').getTime()
 
   const countdownInterval = setInterval(() => {
     const now = new Date().getTime()
@@ -61,11 +61,11 @@ onMounted(() => {
       >
         <div class="flex flex-col gap-2 p-2">
           <div class="cormorant-garamond-bold text-3xl">Akad</div>
-          <div class="md:text-lg flex flex-col">09:00 WIB <span>s/d</span> 10:00 WIB</div>
+          <div class="md:text-lg flex flex-col">11:00 WIB <span>s/d</span> 12:00 WIB</div>
         </div>
         <div class="flex flex-col gap-2 p-2">
           <div class="cormorant-garamond-bold text-3xl">Resepsi</div>
-          <div class="md:text-lg flex flex-col">11:00 WIB <span>s/d</span> Selesai</div>
+          <div class="md:text-lg flex flex-col">13:00 WIB <span>s/d</span> Selesai</div>
         </div>
       </div>
       <div class="flex flex-col gap-2">
