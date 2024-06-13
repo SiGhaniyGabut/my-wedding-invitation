@@ -14,8 +14,8 @@ const guestStore = useGuestStore()
 onMounted(async () => {
   // Find guest name based on guest code
   const guests = await (await fetch('/guests.json')).json()
-  const guestCode = window.location.pathname.split('/').pop()
-  const guest = guests.find((guest) => guest.code === guestCode)
+  const codePath = window.location.pathname.split('/').pop()
+  const guest = guests.find((guest) => guest.guestCode === codePath)
 
   if (!guest) return
 

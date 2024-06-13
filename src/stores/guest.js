@@ -4,16 +4,16 @@ export const useGuestStore = defineStore({
     id: 'guest',
     state: () => ({
         name: 'ERROR_INVALID_GUEST_CODE',
-        code: 'ERROR_INVALID_GUEST_CODE',
+        guestCode: 'ERROR_INVALID_GUEST_CODE',
         isGuestRegistered: false,
     }),
     actions: {
-        setNameAndCode(name, code) {
+        setNameAndCode(name, guestCode) {
             this.name = name;
-            this.code = code;
+            this.guestCode = guestCode;
         },
-        registerGuest({ name, code }) {
-            this.setNameAndCode(name, code);
+        registerGuest({ name, guestCode }) {
+            this.setNameAndCode(name, guestCode);
             this.isGuestRegistered = true;
         },
     },
