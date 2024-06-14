@@ -1,7 +1,7 @@
 <script setup>
-import ButtonAction from '../partials/ButtonAction.vue';
-import SectionContent from '../partials/SectionContent.vue'
-import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
+import ButtonAction from '@partials/ButtonAction.vue';
+import SectionContent from '@partials/SectionContent.vue'
+import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
 
 const saveEventToCalendar = () => {
   window.open(

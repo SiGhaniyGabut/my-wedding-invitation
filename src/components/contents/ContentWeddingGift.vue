@@ -2,13 +2,13 @@
 import { ref, onMounted } from 'vue'
 import { useClipboard } from '@vueuse/core'
 
-import GiftCard from '../partials/GiftCard.vue'
-import ButtonAction from '../partials/ButtonAction.vue'
-import SectionContent from '../partials/SectionContent.vue'
-import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
-import BankJagoIcon from '../../assets/images/BANK_JAGO.svg'
-import IlustrationMobileBanking from '../../assets/images/ILUSTRATION_MOBILE_BANKING.svg'
-import IlustrationDelivery from '../../assets/images/ILUSTRATION_DELIVERY.svg'
+import GiftCard from '@partials/GiftCard.vue'
+import ButtonAction from '@partials/ButtonAction.vue'
+import SectionContent from '@partials/SectionContent.vue'
+import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
+import BankJagoIcon from '@/assets/images/BANK_JAGO.svg'
+import IlustrationMobileBanking from '@/assets/images/ILUSTRATION_MOBILE_BANKING.svg'
+import IlustrationDelivery from '@/assets/images/ILUSTRATION_DELIVERY.svg'
 
 const accountNumber = ref('102004549898')
 const textAccountNumber = ref('')

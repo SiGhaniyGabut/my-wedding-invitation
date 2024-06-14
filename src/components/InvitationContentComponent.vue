@@ -1,27 +1,27 @@
 <script setup>
 import { onMounted, ref, nextTick, watch } from 'vue'
-import { useEnvelopeStore } from '../stores/envelope'
+import { useEnvelopeStore } from '@/stores/envelope'
 
-import FlowerVertical from './partials/FlowerVertical.vue'
+import FlowerVertical from '@partials/FlowerVertical.vue'
 
 // Covers Components
-import CoverInvitation from './covers/CoverInvitation.vue'
-import CoverBrideProfile from './covers/CoverBrideProfile.vue'
-import CoverDateAndVenue from './covers/CoverDateAndVenue.vue'
-import CoverMomentsAndGallery from './covers/CoverMomentsAndGallery.vue'
-import CoverWeddingGift from './covers/CoverWeddingGift.vue'
+import CoverInvitation from '@components/covers/CoverInvitation.vue'
+import CoverBrideProfile from '@components/covers/CoverBrideProfile.vue'
+import CoverDateAndVenue from '@components/covers/CoverDateAndVenue.vue'
+import CoverMomentsAndGallery from '@components/covers/CoverMomentsAndGallery.vue'
+import CoverWeddingGift from '@components/covers/CoverWeddingGift.vue'
 
 // Content Components
-import ContentHadit from './contents/ContentHadit.vue'
-import ContentAyah from './contents/ContentAyah.vue'
-import ContentBrideProfileMan from './contents/ContentBrideProfileMan.vue'
-import ContentBrideProfileWoman from './contents/ContentBrideProfileWoman.vue'
-import ContentDate from './contents/ContentDate.vue'
-import ContentMoments from './contents/ContentMoments.vue'
-import ContentGallery from './contents/ContentGallery.vue'
-import ContentWeddingGift from './contents/ContentWeddingGift.vue'
-import ContentThanks from './contents/ContentThanks.vue'
-import ContentAuthorshipAndLicense from './contents/ContentAuthorshipAndLicense.vue'
+import ContentHadit from '@components/contents/ContentHadit.vue'
+import ContentAyah from '@components/contents/ContentAyah.vue'
+import ContentBrideProfileMan from '@components/contents/ContentBrideProfileMan.vue'
+import ContentBrideProfileWoman from '@components/contents/ContentBrideProfileWoman.vue'
+import ContentDate from '@components/contents/ContentDate.vue'
+import ContentMoments from '@components/contents/ContentMoments.vue'
+import ContentGallery from '@components/contents/ContentGallery.vue'
+import ContentWeddingGift from '@components/contents/ContentWeddingGift.vue'
+import ContentThanks from '@components/contents/ContentThanks.vue'
+import ContentAuthorshipAndLicense from '@components/contents/ContentAuthorshipAndLicense.vue'
 
 const envelopeStore = useEnvelopeStore()
 const verticalFlowerOpacity = ref(0)

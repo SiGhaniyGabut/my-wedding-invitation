@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
-import BackGround from './components/partials/BackGround.vue'
-import LoadingScreen from './components/partials/LoadingScreen.vue'
-import EnvelopeComponent from './components/EnvelopeComponent.vue'
-import InvitationContentComponent from './components/InvitationContentComponent.vue'
+import BackGround from '@partials/BackGround.vue'
+import LoadingScreen from '@partials/LoadingScreen.vue'
+import EnvelopeComponent from '@components/EnvelopeComponent.vue'
+import InvitationContentComponent from '@components/InvitationContentComponent.vue'
 
 const pageLoaded = ref(false)
 

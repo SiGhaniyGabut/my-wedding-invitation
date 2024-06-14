@@ -1,12 +1,12 @@
 <script setup>
 import { onMounted, watch } from 'vue'
-import { useEnvelopeStore } from '../../stores/envelope'
-import { useGuestStore } from '../../stores/guest'
+import { useEnvelopeStore } from '@/stores/envelope'
+import { useGuestStore } from '@/stores/guest'
 
-import ButtonAction from '../partials/ButtonAction.vue'
-import SectionContent from '../partials/SectionContent.vue'
-import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
-import Music from '../../assets/music/RAPSODI-JKT48_SAXOPHONE-COVER.mp3'
+import ButtonAction from '@partials/ButtonAction.vue'
+import SectionContent from '@partials/SectionContent.vue'
+import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
+import Music from '@/assets/music/RAPSODI-JKT48_SAXOPHONE-COVER.mp3'
 
 const envelopeStore = useEnvelopeStore()
 const guestStore = useGuestStore()

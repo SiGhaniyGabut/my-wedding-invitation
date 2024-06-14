@@ -1,8 +1,8 @@
 <script setup>
-import { useEnvelopeStore } from '../stores/envelope'
+import { useEnvelopeStore } from '@/stores/envelope'
 
-import FlowerCorner from './partials/FlowerCorner.vue'
-import CoverEnvelope from './covers/CoverEnvelope.vue'
+import FlowerCorner from '@/components/partials/FlowerCorner.vue'
+import CoverEnvelope from '@/components/covers/CoverEnvelope.vue'
 
 const envelopeStore = useEnvelopeStore()
 </script>

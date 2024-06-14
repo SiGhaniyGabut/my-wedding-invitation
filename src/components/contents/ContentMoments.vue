@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-import ImageGrid from '../partials/ImageGrid.vue'
-import SectionContent from '../partials/SectionContent.vue'
-import SectionContentWrapper from '../partials/SectionContentWrapper.vue'
+import ImageGrid from '@partials/ImageGrid.vue'
+import SectionContent from '@partials/SectionContent.vue'
+import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
 
 const imageFiles = [
   'IMAGE_XVI',
@@ -21,7 +21,7 @@ const imagesLoaded = ref(false)
 
 onMounted(async () => {
   for (const image of imageFiles) {
-    imageModules.value[image] = await import(`../../assets/images/gallery/${image}.webp`)
+    imageModules.value[image] = await import(`@/assets/images/gallery/${image}.webp`)
   }
 
   images.value = Object.values(imageModules.value).map((image) => image.default)
