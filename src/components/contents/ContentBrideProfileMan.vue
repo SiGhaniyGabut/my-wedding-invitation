@@ -1,17 +1,35 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+import { useWeddingInformationStore } from '@/stores/wedding-information'
+
 import BrideImage from '@partials/BrideImage.vue'
-import ManBrideImage from '@/assets/images/PROFILE_GHANIY.webp'
+import BrideProfile from '@partials/BrideProfile.vue'
 import SectionContent from '@partials/SectionContent.vue'
 import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
+
+const information = useWeddingInformationStore().getInformation()
+const image = ref('')
+
+onMounted(async () => {
+  image.value = (await information.brides.groom.photo.src).default
+})
 </script>
 
 <template>
-  <SectionContent :isCover="false" :overflowAuto="false" :sectionSplitter="true" :showSplitterOnMediumScreen="true">
+  <SectionContent
+    :isCover="false"
+    :overflowAuto="false"
+    :sectionSplitter="true"
+    :showSplitterOnMediumScreen="true"
+  >
     <SectionContentWrapper>
-      <BrideImage :src="ManBrideImage" />
-      <p class="cormorant-garamond-bold text-2xl md:text-3xl">Abdul Hakim Ghaniy, S.Kom</p>
-      <p class="">Anak Pertama dari</p>
-      <p class="cormorant-garamond-bold text-xl">Bapak Nur Wahyudin & Ibu Rumiasih</p>
+      <BrideImage :src="image" :alt="information.brides.groom.photo.alt" />
+      <BrideProfile
+        :name="information.brides.groom.name"
+        :title="information.brides.groom.title"
+        :birthOrder="information.brides.groom.birthOrder"
+        :parents="information.brides.groom.parents"
+      />
     </SectionContentWrapper>
   </SectionContent>
 </template>

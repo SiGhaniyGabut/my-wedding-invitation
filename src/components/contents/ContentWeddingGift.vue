@@ -1,29 +1,28 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useClipboard } from '@vueuse/core'
+import { useWeddingInformationStore } from '@/stores/wedding-information'
 
 import GiftCard from '@partials/GiftCard.vue'
 import ButtonAction from '@partials/ButtonAction.vue'
 import SectionContent from '@partials/SectionContent.vue'
 import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
-import BankJagoIcon from '@/assets/images/BANK_JAGO.svg'
-import IlustrationMobileBanking from '@/assets/images/ILUSTRATION_MOBILE_BANKING.svg'
-import IlustrationDelivery from '@/assets/images/ILUSTRATION_DELIVERY.svg'
 
-const accountNumber = ref('102004549898')
-const textAccountNumber = ref('')
-const deliveryAddress = ref(
-  'Jl. Marzuki 2, RT007/002 No.700, Penggilingan, Cakung, Jakarta Timur 13940 (Patokan: Ketoprak Bang Toyib). Telp: 0851-5710-5331'
-)
+const information = useWeddingInformationStore().getInformation()
+const accountNumber = ref(information.gifts.cashless.accountNumber)
+const deliveryAddress = ref(information.gifts.delivery.note)
+const displayedAccountNumber = ref('')
 const activeCard = ref('bank')
+const bankIcon = ref('')
 
 const { copy: copyAccountNumber, copied: copiedAccountNumber } = useClipboard({ accountNumber })
 const { copy: copyDeliveryAddress, copied: copiedDeliveryAddress } = useClipboard({
   deliveryAddress
 })
 
-onMounted(() => {
-  textAccountNumber.value = accountNumber.value.match(/.{1,4}/g).join(' ')
+onMounted(async () => {
+  bankIcon.value = (await information.gifts.cashless.bankIcon).default
+  displayedAccountNumber.value = accountNumber.value.match(/.{1,4}/g).join(' ')
 })
 </script>
 
@@ -41,12 +40,13 @@ onMounted(() => {
         </div>
         <Transition name="fade" mode="out-in">
           <GiftCard
-            :cardBackgroundIlustration="IlustrationMobileBanking"
+            :activeCard="activeCard"
+            :backgroundColor="information.gifts.cashless.colorHex"
             v-if="activeCard === 'bank'"
           >
             <template #card-header>
-              <img :src="BankJagoIcon" alt="Bank Jago" class="w-full max-w-24 m-0" />
-              <div class="">06/29</div>
+              <img :src="bankIcon" alt="Bank Jago" class="w-full max-w-24 m-0" />
+              <div>06/29</div>
             </template>
             <template #card-information>
               <div class="text-xs md:text-sm font-medium" v-if="copiedAccountNumber">Tersalin!</div>
@@ -54,15 +54,19 @@ onMounted(() => {
                 class="text-2xl md:text-3xl font-bold hover:cursor-pointer select-none"
                 @click="copyAccountNumber(accountNumber)"
               >
-                {{ textAccountNumber }}
+                {{ displayedAccountNumber }}
               </div>
-              <div class="italic md:text-xl">Abdul Hakim Ghaniy</div>
+              <div class="italic md:text-xl">{{ information.gifts.cashless.accountOwner }}</div>
             </template>
           </GiftCard>
-          <GiftCard :cardBackgroundIlustration="IlustrationDelivery" v-else>
+          <GiftCard
+            :activeCard="activeCard"
+            :backgroundColor="information.gifts.delivery.colorHex"
+            v-else
+          >
             <template #card-header>
               <div class="text-white font-bold">DELIVERY</div>
-              <div class="">06/29</div>
+              <div>06/29</div>
             </template>
             <template #card-information>
               <div class="text-xs md:text-sm font-medium" v-if="copiedDeliveryAddress">
@@ -72,9 +76,9 @@ onMounted(() => {
                 class="text-lg md:text-3xl font-bold hover:cursor-pointer select-none"
                 @click="copyDeliveryAddress(deliveryAddress)"
               >
-                Jl. Marzuki 2, RT007/002 No.700
+                {{ information.gifts.delivery.place }}
               </div>
-              <div class="italic text-sm md:text-lg">Penggilingan, Cakung, Jakarta Timur 13940</div>
+              <div class="italic text-sm md:text-lg">{{ information.gifts.delivery.address }}</div>
             </template>
           </GiftCard>
         </Transition>
@@ -84,10 +88,12 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

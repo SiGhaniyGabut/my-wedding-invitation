@@ -1,6 +1,10 @@
 <script setup>
+import { useWeddingInformationStore } from '@/stores/wedding-information'
+
 import SectionContent from '@partials/SectionContent.vue'
 import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
+
+const information = useWeddingInformationStore().getInformation()
 </script>
 
 <template>
@@ -23,7 +27,9 @@ import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
       <p>
         Hormat Kami,
         <br />
-        <span class="text-xs">- Abdul Hakim Ghaniy &amp; Mega Apriyani Tarwiyah -</span>
+        <span class="text-xs"
+          >- {{ information.brides.groom.name }} &amp; {{ information.brides.bride.name }} -</span
+        >
       </p>
     </SectionContentWrapper>
   </SectionContent>

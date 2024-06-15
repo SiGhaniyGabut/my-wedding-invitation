@@ -1,16 +1,13 @@
 <script setup>
 defineProps({
-  src: String
+  src: String,
+  alt: String
 })
 </script>
 
 <template>
   <div class="bride-image relative">
-    <img
-      :src="src"
-      alt="Men Bride - Ghaniy"
-      class="w-full max-w-52 h-auto m-auto rounded-2xl shadow-xl"
-    />
+    <img :src="src" :alt="alt" class="w-full max-w-52 h-auto m-auto rounded-2xl shadow-xl" />
     <div class="lottie-animation absolute w-full max-w-32 md:left-5 -top-10 rotate-180">
       <LottieAnimation
         autoplay

@@ -1,13 +1,12 @@
 <script setup>
-import ButtonAction from '@partials/ButtonAction.vue';
+import { useWeddingInformationStore } from '@/stores/wedding-information'
+
+import ButtonAction from '@partials/ButtonAction.vue'
 import SectionContent from '@partials/SectionContent.vue'
 import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
 
-const saveEventToCalendar = () => {
-  window.open(
-    'https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240629T020000Z%2F20240629T170000Z&details=Akad%20Nikah%20dan%20Resepsi%20Abdul%20Hakim%20Ghaniy%20-%20Mega%20Apriyani%20Tarwiyah%20di%20Pesakih%2C%20Kalideres%2C%20Jakarta%20Barat.&location=Pesakih%2C%20Kalideres%2C%20Jakarta%20Barat&text=Wedding%20of%20Ghaniy%20and%20Mega%20A.%20T'
-  )
-}
+const information = useWeddingInformationStore().getInformation()
+const saveEventToCalendar = () => window.open(information.calendarLink, '_blank')
 </script>
 
 <template>
@@ -17,15 +16,14 @@ const saveEventToCalendar = () => {
       <p
         class="cormorant-garamond-bold-italic text-5xl flex flex-col gap-2 justify-center md:flex-row md:text-6xl"
       >
-        <span>GHANIY</span><span>&</span><span>MEGA</span>
+        <span>{{ information.brides.groom.nickname.toUpperCase() }}</span
+        ><span>&</span><span>{{ information.brides.bride.nickname.toUpperCase() }}</span>
       </p>
       <div class="additional-info flex flex-col gap-2">
-        <p class="cormorant-garamond-bold text-2xl">Sabtu, 29 Juni 2024</p>
-        <ButtonAction
-          text="Save to Google Calendar"
-          type="button"
-          @click="saveEventToCalendar"
-        />
+        <p class="cormorant-garamond-bold text-2xl">
+          {{ information.localeDateString }}
+        </p>
+        <ButtonAction text="Save to Google Calendar" type="button" @click="saveEventToCalendar" />
       </div>
     </SectionContentWrapper>
   </SectionContent>
