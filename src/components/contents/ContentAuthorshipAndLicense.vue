@@ -21,8 +21,9 @@ import SectionContentWrapper from '@partials/SectionContentWrapper.vue'
         </p>
         <p>
           All assets (including images, music, fonts, and layout) are licensed under those own
-          creators. Look at the credits section on <a href="https://github.com/SiGhaniyGabut/my-wedding-invitation">this repository</a> for more
-          information.
+          creators. Look at the credits section on
+          <a href="https://github.com/SiGhaniyGabut/my-wedding-invitation">this repository</a> for
+          more information.
         </p>
       </div>
     </SectionContentWrapper>

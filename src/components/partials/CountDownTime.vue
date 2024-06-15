@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
-    time: Number,
-    timeType: String
+  time: Number,
+  timeType: String
 })
 </script>
 

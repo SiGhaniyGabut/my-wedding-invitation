@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 defineProps({
-  imageSources: Array,
+  imageSources: Array
 })
 
 const gridElement = ref(null)
@@ -52,7 +52,6 @@ onMounted(async () => {
   const { columns, rows } = getGridSize(gridElement.value)
   console.log(columns, rows)
 })
-
 </script>
 
 <template>
